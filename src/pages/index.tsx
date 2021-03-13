@@ -23,7 +23,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Container>
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex items-center justify-between pt-4 pb-8">
         <a href="#">
           <img src={asset_logoFull} alt="Logo" className="block" />
         </a>
