@@ -6,6 +6,13 @@ module.exports = {
       heading: "acumin-pro-wide, sans-serif",
       body: "neue-haas-grotesk-display, sans-serif",
     },
+    extend: {
+      spacing: {
+        112: "28rem",
+        128: "32rem",
+        144: "36rem",
+      },
+    },
     colors: {
       white: "#fff",
       black: "#000",
@@ -20,6 +27,7 @@ module.exports = {
         800: "#304939",
       },
       grey: {
+        300: "#878787",
         500: "#2E2E2E",
         800: "#1A1A1A",
       },
