@@ -9,6 +9,10 @@ import * as React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Container } from '../Container'
+import { SectionHeading } from '../SectionHeading'
+import { Button } from '../Button'
+import { Text } from '../Text'
+import { Link } from 'gatsby'
 
 import asset_logoFull from '../../assets/logo_full.png'
 
@@ -30,18 +34,19 @@ const Layout = ({ children }) => {
     <div className="overflow-x-hidden w-full">
       <Container>
         <div className="flex items-center justify-between pt-4 pb-8">
-          <a href="#">
+          <Link to="/">
             <img src={asset_logoFull} alt="Logo" className="block" />
-          </a>
+          </Link>
 
           <div className="flex items-center">
-            <a href="#" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
+            <Link to="/" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
               Home
-            </a>
+            </Link>
 
-            <a href="#" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
+            <Link to="/vaser" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
               Vaser
-            </a>
+            </Link>
+
             <a href="#" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
               Services
             </a>
@@ -61,6 +66,43 @@ const Layout = ({ children }) => {
       </Container>
 
       {children}
+
+      <footer className="bg-black">
+        <Container>
+          <div className="py-8">
+            <SectionHeading
+              title="We welcome your questions and comments"
+              body="Do you have any questions or would you like a personal consultation?"
+              mode="dark"
+            />
+
+            <div className="mb-8" />
+
+            <div className="mx-auto max-w-2xl text-center">
+              <Button mode="dark">Contact us</Button>
+            </div>
+          </div>
+
+          <div className="flex justify-between py-4 border-t border-grey-500">
+            <Text size="xs" color="grey-300" weight="medium">
+              &copy; Aesthetics. All rights reserved.
+            </Text>
+
+            <div className="flex">
+              <a href="#" className="px-2">
+                <Text size="xs" color="grey-300" weight="medium">
+                  Privacy Policy
+                </Text>
+              </a>
+              <a href="#" className="px-2">
+                <Text size="xs" color="grey-300" weight="medium">
+                  Terms
+                </Text>
+              </a>
+            </div>
+          </div>
+        </Container>
+      </footer>
     </div>
   )
 }

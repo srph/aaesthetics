@@ -1,5 +1,5 @@
-import React from "react"
-import cx from "classnames"
+import React from 'react'
+import cx from 'classnames'
 
 interface Props {
   color?: string
@@ -7,29 +7,31 @@ interface Props {
   type?: string
   size?: string
   leading?: string
+  as?: string
 }
 
 const Text: React.FC<Props> = ({
   children,
-  color = "black",
+  color = 'black',
   weight,
-  size = "md",
+  size = 'md',
   leading,
-  type = "body",
+  type = 'body',
+  as = 'span'
 }) => {
-  return (
-    <span
-      className={cx({
-        "font-body": type === "body",
-        "font-heading uppercase": type === "heading",
+  return React.createElement(
+    as,
+    {
+      className: cx({
+        'font-body': type === 'body',
+        'font-heading uppercase': type === 'heading',
         [`text-${size}`]: size,
         [`text-${color}`]: color,
         [`font-${weight}`]: weight,
-        [`font-${leading}`]: leading,
-      })}
-    >
-      {children}
-    </span>
+        [`leading-${leading}`]: leading
+      })
+    },
+    children
   )
 }
 
