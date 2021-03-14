@@ -51,9 +51,9 @@ const Layout = ({ children }) => {
               Services
             </Link>
 
-            <a href="#" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
+            <Link to="/gallery" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
               Gallery
-            </a>
+            </Link>
 
             <Link to="/contact" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
               Contact

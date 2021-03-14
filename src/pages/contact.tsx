@@ -12,7 +12,7 @@ import { Textarea } from '../components/Textarea'
 import { Button } from '../components/Button'
 export { theme } from '../../tailwind.config'
 
-const ServicesPage = () => (
+const ContactPage = () => (
   <Layout>
     <SEO title="Home" />
 
@@ -147,4 +147,4 @@ const ServicesPage = () => (
   </Layout>
 )
 
-export default ServicesPage
+export default ContactPage
