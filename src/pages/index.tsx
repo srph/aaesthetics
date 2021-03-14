@@ -145,7 +145,7 @@ const IndexPage = () => (
           />
         </div>
 
-        <div className="relative flex bg-gold-500 mb-36">
+        <div className="relative flex bg-gold-500 mb-48">
           <div className="max-w-sm shrink-none px-8 pt-8 pb-24">
             <h4 className="text-gold-800 font-heading font-extrabold uppercase mb-4">Hair Removal</h4>
 
@@ -163,7 +163,12 @@ const IndexPage = () => (
               <img src={asset_modelA2Block} className="block" />
             </div>
 
-            <img src={asset_modelA3Column} className="block" />
+            <div>
+              <img src={asset_modelA3Column} className="block mb-4" />
+              <div className="text-right">
+                <CallToAction icon={<FaArrowRight />}>View Client Gallery</CallToAction>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -184,7 +189,8 @@ const IndexPage = () => (
           <div className="absolute flex top-8 -left-8">
             <div className="shrink-none mr-4">
               <img src={asset_modelB1Block} className="block mb-4" />
-              <img src={asset_modelB2Block} className="block" />
+              <img src={asset_modelB2Block} className="block mb-4" />
+              <CallToAction icon={<FaArrowRight />}>View Client Gallery</CallToAction>
             </div>
 
             <img src={asset_modelB3Column} className="block" />
