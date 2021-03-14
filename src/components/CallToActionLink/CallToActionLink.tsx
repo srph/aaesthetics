@@ -1,19 +1,21 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 interface Props {
+  to: string
   icon?: React.ReactElement
   color?: string
 }
 
-const CallToAction: React.FC<Props> = ({ children, color = 'gold-800', icon }) => {
+const CallToActionLink: React.FC<Props> = ({ to, children, color = 'gold-800', icon }) => {
   return (
-    <button
-      type="button"
+    <Link
+      to={to}
       className={`inline-flex items-center text-${color} font-heading text-sm font-bold uppercase cursor-pointer`}>
       {children}
       <span className="ml-2">{icon}</span>
-    </button>
+    </Link>
   )
 }
 
-export { CallToAction }
+export { CallToActionLink }

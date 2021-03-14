@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Container } from '../Container'
 import { SectionHeading } from '../SectionHeading'
-import { Button } from '../Button'
+import { ButtonLink } from '../ButtonLink'
 import { Text } from '../Text'
 import { Link } from 'gatsby'
 
@@ -82,7 +82,9 @@ const Layout = ({ children }) => {
             <div className="mb-8" />
 
             <div className="mx-auto max-w-2xl text-center">
-              <Button mode="dark">Contact us</Button>
+              <ButtonLink to="/contact" mode="dark">
+                Contact us
+              </ButtonLink>
             </div>
           </div>
 

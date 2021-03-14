@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
 import { Layout } from '../components/Layout'
@@ -9,6 +8,7 @@ import { Section } from '../components/Section'
 import { SectionHeading } from '../components/SectionHeading'
 import { FaAngleDown, FaArrowRight } from '../components/Icon'
 import { CallToAction } from '../components/CallToAction'
+import { CallToActionLink } from '../components/CallToActionLink'
 import { Button } from '../components/Button'
 import { Text } from '../components/Text'
 import { Accordion, AccordionItem, AccordionParagraph } from '../components/Accordion'
@@ -122,7 +122,9 @@ const IndexPage = () => (
               visual form of a document or a typeface without relying on meaningful content.
             </p>
 
-            <CallToAction icon={<FaArrowRight />}>Learn More</CallToAction>
+            <CallToActionLink to="/services#hair-removal" icon={<FaArrowRight />}>
+              Learn More
+            </CallToActionLink>
           </div>
 
           <div className="absolute flex top-8 -right-8">
@@ -134,7 +136,9 @@ const IndexPage = () => (
             <div>
               <img src={asset_modelA3Column} className="block mb-4" />
               <div className="text-right">
-                <CallToAction icon={<FaArrowRight />}>View Client Gallery</CallToAction>
+                <CallToActionLink to="/gallery" icon={<FaArrowRight />}>
+                  View Client Gallery
+                </CallToActionLink>
               </div>
             </div>
           </div>
@@ -149,16 +153,18 @@ const IndexPage = () => (
               visual form of a document or a typeface without relying on meaningful content.
             </p>
 
-            <CallToAction color="green-800" icon={<FaArrowRight />}>
+            <CallToActionLink to="/services#semi-permanent-make-up" color="green-800" icon={<FaArrowRight />}>
               Learn More
-            </CallToAction>
+            </CallToActionLink>
           </div>
 
           <div className="absolute flex top-8 -left-8">
             <div className="shrink-none mr-4">
               <img src={asset_modelB1Block} className="block mb-4" />
               <img src={asset_modelB2Block} className="block mb-4" />
-              <CallToAction icon={<FaArrowRight />}>View Client Gallery</CallToAction>
+              <CallToActionLink to="/gallery" icon={<FaArrowRight />}>
+                View Client Gallery
+              </CallToActionLink>
             </div>
 
             <img src={asset_modelB3Column} className="block" />
