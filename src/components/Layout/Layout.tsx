@@ -47,9 +47,10 @@ const Layout = ({ children }) => {
               Vaser
             </Link>
 
-            <a href="#" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
+            <Link to="/services" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
               Services
-            </a>
+            </Link>
+
             <a href="#" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
               Gallery
             </a>
