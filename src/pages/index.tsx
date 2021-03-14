@@ -6,9 +6,11 @@ import { Layout } from "../components/Layout"
 import { SEO } from "../components/SEO"
 import { Container } from "../components/Container"
 import { Section } from "../components/Section"
+import { SectionHeading } from "../components/SectionHeading"
 import { FaAngleDown, FaArrowRight } from "../components/Icon"
 import { CallToAction } from "../components/CallToAction"
 import { Button } from "../components/Button"
+import { Text } from "../components/Text"
 import {
   Accordion,
   AccordionItem,
@@ -88,40 +90,40 @@ const IndexPage = () => (
         <div className="flex items-center">
           <a
             href="#"
-            className="subpixel-antialiased p-4 text-gold-500 font-heading uppercase"
+            className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase"
           >
             Home
           </a>
 
           <a
             href="#"
-            className="subpixel-antialiased p-4 text-gold-500 font-heading uppercase"
+            className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase"
           >
             Vaser
           </a>
           <a
             href="#"
-            className="subpixel-antialiased p-4 text-gold-500 font-heading uppercase"
+            className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase"
           >
             Services
           </a>
           <a
             href="#"
-            className="subpixel-antialiased p-4 text-gold-500 font-heading uppercase"
+            className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase"
           >
             Gallery
           </a>
 
           <a
             href="#"
-            className="subpixel-antialiased p-4 text-gold-500 font-heading uppercase"
+            className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase"
           >
             Contact
           </a>
 
           <a
             href="#"
-            className="subpixel-antialiased p-4 text-gold-500 font-heading uppercase"
+            className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase"
           >
             +639166729133
           </a>
@@ -167,15 +169,11 @@ const IndexPage = () => (
 
     <Container size="lg">
       <Section>
-        <div className="mx-auto max-w-2xl text-center mb-8">
-          <h1 className="mb-4 font-sm font-heading font-extrabold uppercase text-gold-800">
-            Reveal a new you
-          </h1>
-
-          <p className="mb-8 text-4xl font-body font-medium leading-tight text-gold-500">
-            With the help of a Pioneer in Vaserlipo and High Definition
-            Liposucture since 2008
-          </p>
+        <div className="mb-8">
+          <SectionHeading
+            title="Reveal a new you"
+            body="With the help of a Pioneer in Vaserlipo and High Definition Liposucture since 2008"
+          />
         </div>
 
         <div className="relative flex bg-gold-500 mb-36">
@@ -234,14 +232,11 @@ const IndexPage = () => (
 
     <Container size="md">
       <Section>
-        <div className="mx-auto max-w-2xl text-center mb-12">
-          <h1 className="mb-4 font-sm font-heading font-extrabold uppercase text-gold-800">
-            And more...
-          </h1>
-
-          <p className="mb-8 text-4xl font-body font-medium leading-tight text-gold-500">
-            We offer a number of services to achieve a body you deserve
-          </p>
+        <div className="mb-12">
+          <SectionHeading
+            title="And more..."
+            body="We offer a number of services to achieve a body you deserve"
+          />
         </div>
 
         <div className="flex flex-wrap">
@@ -273,13 +268,10 @@ const IndexPage = () => (
     <Container>
       <Section>
         <div className="mx-auto max-w-2xl text-center mb-8">
-          <h1 className="mb-4 font-sm font-heading font-extrabold uppercase text-gold-800">
-            WE HAVE A WIDE RANGE OF COSMETIC SURGERIES
-          </h1>
-
-          <p className="mb-8 text-4xl font-body font-medium leading-tight text-gold-500">
-            Experience allows us to create unique things
-          </p>
+          <SectionHeading
+            title="We have a wide range of cosmetic surgeries"
+            body="Experience allows us to create unique things"
+          />
         </div>
 
         <div className="relative mb-36 px-12 pt-12 bg-gold-500">
@@ -349,42 +341,42 @@ const IndexPage = () => (
       </Section>
     </Container>
 
-    <div className="bg-black">
+    <footer className="bg-black">
       <Container>
-        <div className="mx-auto py-8 max-w-2xl text-center">
-          <h1 className="mb-4 font-sm font-heading font-extrabold uppercase text-gold-500">
-            We welcome your questions and comments
-          </h1>
+        <div className="py-8">
+          <SectionHeading
+            title="We welcome your questions and comments"
+            body="Do you have any questions or would you like a personal consultation?"
+            mode="dark"
+          />
 
-          <p className="mb-8 text-4xl font-body font-medium leading-tight text-white">
-            Do you have any questions or would you like a personal consultation?
-          </p>
+          <div className="mb-8" />
 
-          <Button mode="dark">Contact us</Button>
+          <div className="mx-auto max-w-2xl text-center">
+            <Button mode="dark">Contact us</Button>
+          </div>
         </div>
 
         <div className="flex justify-between py-4 border-t border-grey-500">
-          <span className="text-grey-300 font-medium text-xs font-body">
+          <Text size="xs" color="grey-300" weight="medium">
             &copy; Aesthetics. All rights reserved.
-          </span>
+          </Text>
 
           <div className="flex">
-            <a
-              href="#"
-              className="px-2 font-medium text-grey-300 text-xs font-body"
-            >
-              Privacy Policy
+            <a href="#" className="px-2">
+              <Text size="xs" color="grey-300" weight="medium">
+                Privacy Policy
+              </Text>
             </a>
-            <a
-              href="#"
-              className="px-2 font-medium text-grey-300 text-xs font-body"
-            >
-              Terms
+            <a href="#" className="px-2">
+              <Text size="xs" color="grey-300" weight="medium">
+                Terms
+              </Text>
             </a>
           </div>
         </div>
       </Container>
-    </div>
+    </footer>
   </Layout>
 )
 
