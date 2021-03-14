@@ -55,11 +55,13 @@ const Layout = ({ children }) => {
               Gallery
             </a>
 
-            <a href="#" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
+            <Link to="/contact" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
               Contact
-            </a>
+            </Link>
 
-            <a href="#" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
+            <a
+              href="tel:+639166729133"
+              className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
               +639166729133
             </a>
           </div>

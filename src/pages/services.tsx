@@ -158,7 +158,7 @@ const ServicesPage = () => (
                   })}>
                   <img
                     src={service.thumbnail}
-                    className={cx('block object-fill w-full', {
+                    className={cx('block object-fill  w-full', {
                       'self-end': i % 2 !== 0
                     })}
                   />
