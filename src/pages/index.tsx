@@ -13,7 +13,6 @@ import { Button } from '../components/Button'
 import { Text } from '../components/Text'
 import { Accordion, AccordionItem, AccordionParagraph } from '../components/Accordion'
 
-import asset_logoFull from '../assets/logo_full.png'
 import asset_logoOutlineArt from '../assets/logo-outline-art.svg'
 
 import asset_modelHeading from '../assets/model-heading.png'
@@ -80,37 +79,6 @@ const services = [
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Container>
-      <div className="flex items-center justify-between pt-4 pb-8">
-        <a href="#">
-          <img src={asset_logoFull} alt="Logo" className="block" />
-        </a>
-
-        <div className="flex items-center">
-          <a href="#" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
-            Home
-          </a>
-
-          <a href="#" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
-            Vaser
-          </a>
-          <a href="#" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
-            Services
-          </a>
-          <a href="#" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
-            Gallery
-          </a>
-
-          <a href="#" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
-            Contact
-          </a>
-
-          <a href="#" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
-            +639166729133
-          </a>
-        </div>
-      </div>
-    </Container>
 
     <Container>
       <div className="relative">
@@ -136,8 +104,8 @@ const IndexPage = () => (
       </div>
     </Container>
 
-    <Container size="lg">
-      <Section>
+    <Section>
+      <Container size="lg">
         <div className="mb-8">
           <SectionHeading
             title="Reveal a new you"
@@ -196,8 +164,8 @@ const IndexPage = () => (
             <img src={asset_modelB3Column} className="block" />
           </div>
         </div>
-      </Section>
-    </Container>
+      </Container>
+    </Section>
 
     <Section>
       <div className="relative">
@@ -233,8 +201,8 @@ const IndexPage = () => (
       </div>
     </Section>
 
-    <Container>
-      <Section>
+    <Section>
+      <Container>
         <div className="mx-auto max-w-2xl text-center mb-8">
           <SectionHeading
             title="We have a wide range of cosmetic surgeries"
@@ -301,8 +269,8 @@ const IndexPage = () => (
             </AccordionItem>
           </Accordion>
         </div>
-      </Section>
-    </Container>
+      </Container>
+    </Section>
 
     <footer className="bg-black">
       <Container>
