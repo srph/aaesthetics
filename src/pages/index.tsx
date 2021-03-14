@@ -271,43 +271,6 @@ const IndexPage = () => (
         </div>
       </Container>
     </Section>
-
-    <footer className="bg-black">
-      <Container>
-        <div className="py-8">
-          <SectionHeading
-            title="We welcome your questions and comments"
-            body="Do you have any questions or would you like a personal consultation?"
-            mode="dark"
-          />
-
-          <div className="mb-8" />
-
-          <div className="mx-auto max-w-2xl text-center">
-            <Button mode="dark">Contact us</Button>
-          </div>
-        </div>
-
-        <div className="flex justify-between py-4 border-t border-grey-500">
-          <Text size="xs" color="grey-300" weight="medium">
-            &copy; Aesthetics. All rights reserved.
-          </Text>
-
-          <div className="flex">
-            <a href="#" className="px-2">
-              <Text size="xs" color="grey-300" weight="medium">
-                Privacy Policy
-              </Text>
-            </a>
-            <a href="#" className="px-2">
-              <Text size="xs" color="grey-300" weight="medium">
-                Terms
-              </Text>
-            </a>
-          </div>
-        </div>
-      </Container>
-    </footer>
   </Layout>
 )
 
