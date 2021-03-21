@@ -43,6 +43,10 @@ const Layout = ({ children }) => {
               Home
             </Link>
 
+            <Link to="/about" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
+              About
+            </Link>
+
             <Link to="/vaser" className="subpixel-antialiased p-4 text-gold-500 font-medium font-heading uppercase">
               Vaser
             </Link>

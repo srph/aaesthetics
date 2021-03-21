@@ -139,7 +139,7 @@ const ServicesPage = () => (
                 className={cx('relative flex bg-gold-500 mb-16', {
                   'flex-row-reverse': i % 2 === 0
                 })}>
-                <div className="w-2/3 shrink-none px-12 py-16">
+                <div className="w-2/3 flex-shrink-0 px-12 py-16">
                   <Text as="h4" size="2xl" color="gold-800" type="heading" weight="extrabold">
                     {service.name}
                   </Text>

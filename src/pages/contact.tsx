@@ -21,7 +21,7 @@ const ContactPage = () => (
     <Section>
       <Container size="lg">
         <div className="flex">
-          <div className="shrink-none relative bg-gold-500 w-192 p-8 overflow-hidden">
+          <div className="flex-shrink-0 relative bg-gold-500 w-192 p-8 overflow-hidden">
             <div className="relative z-40">
               <Text as="h4" color="gold-800" type="heading" weight="extrabold">
                 Get in touch
