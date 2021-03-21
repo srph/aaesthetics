@@ -126,7 +126,7 @@ const services = [
 
 const ServicesPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Our Services" />
 
     <Jumbotron title="Our Services" body="Wide range of cosmetic enchaments to bring out the new you" />
 

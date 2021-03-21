@@ -78,7 +78,7 @@ const services = [
 
 const VaserPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="VASER" />
 
     <Jumbotron title="Let's talk about vaser" body="Harness the power of ultrasound and assisted liposuction." />
 

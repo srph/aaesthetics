@@ -31,7 +31,7 @@ const affiliations = [
 
 const AboutPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="About" />
 
     <Jumbotron title="About" body="A Aesthetics and the people that's made this possible" />
 

@@ -14,7 +14,7 @@ export { theme } from '../../tailwind.config'
 
 const ContactPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Contact Us" />
 
     <Jumbotron title="Our Services" body="Wide range of cosmetic enchaments to bring out the new you" />
 

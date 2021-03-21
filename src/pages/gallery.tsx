@@ -13,7 +13,7 @@ const GalleryPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Client Gallery" />
 
       <Jumbotron title="Client's Gallery" body="Before & after photos of our clients" />
 
