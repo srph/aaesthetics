@@ -37,45 +37,6 @@ import asset_faqTrie1 from '../assets/faq-trie-1.jpg'
 import asset_faqTrie2 from '../assets/faq-trie-2.jpg'
 import asset_faqTrie3 from '../assets/faq-trie-3.jpg'
 
-const services = [
-  {
-    name: 'VASERLIPO & HIGH DEFINITION LIPOSCULPTURE',
-    description:
-      'Our primary specialty is body sculpting using VASER. This advanced technology combined with a state of the art technique gives superior results.',
-    icon: asset_servicesVaserlipo
-  },
-  {
-    name: 'SKIN TIGHTENING & AURALYFT',
-    description:
-      'We use Thermitight as a non-surgical option for the lower face and neck. For the upper face, we use Thermismooth.',
-    icon: asset_servicesSkinTightening
-  },
-  {
-    name: 'HOURGLASS LIPO & TUMMY TUCK',
-    description:
-      'Our tummy tuck is the modification of the high-def technique that removes excess skin and repairs diastasis of the rectus muscles. Hourglass technique enhances the curves by using fat grafting.',
-    icon: asset_servicesHourglassLipo
-  },
-  {
-    name: 'BLEPHAROPLASTY',
-    description:
-      'The eyes have it. As we age, the eyelids droop, we develop eyebags, deep creases and the brow droops as well.',
-    icon: asset_servicesBlepharosplasty
-  },
-  {
-    name: 'INJECTABLE TISSUE REPLACEMENT & REJUVENATION',
-    description:
-      'Precise Fat grafting technique to adress the aeging face and harness the rejuvenating power of micro fat, nano fat and Stormal Vascular Fractions.',
-    icon: asset_servicesInjectable
-  },
-  {
-    name: 'Rhinoplasty',
-    description:
-      'Whether the use of implants such as silicone or goretex, injectable fillers or threads, or even the use of autologus fat, We strive to give you an all natural look.',
-    icon: asset_servicesRhinoplasty
-  }
-]
-
 const VaserPage = () => (
   <Layout>
     <SEO title="VASER" />
@@ -84,20 +45,22 @@ const VaserPage = () => (
 
     <Section>
       <Container>
-        <div className="relative mb-36 px-12 pt-12 bg-gold-500">
-          <p className="text-white font-body text-2xl leading-normal text-center mx-auto w-3/5">
-            Vaser stands for Vibration Amplification of Sound Energy at Resonance. It is a specialised ultrasound
-            technology used to break down fat cells by sending out ultrasonic frequency waves.
-          </p>
+        <div className="relative mb-36">
+          <div className="px-6 pt-6 lg:px-12 lg:pt-12 bg-gold-500">
+            <p className="text-white font-body text-2xl leading-normal text-center mx-auto lg:w-3/5">
+              Vaser stands for Vibration Amplification of Sound Energy at Resonance. It is a specialised ultrasound
+              technology used to break down fat cells by sending out ultrasonic frequency waves.
+            </p>
 
-          <div className="h-112" />
+            <div className="h-48 lg:h-112" />
+          </div>
 
-          <div className="absolute top-48 inset-x-0 flex align-items justify-center">
-            <div className="px-4">
+          <div className="-mt-36 lg:-mt-0 lg:absolute lg:top-48 inset-x-0 flex flex-col lg:flex-row items-center justify-center">
+            <div className="mb-4 px-4">
               <img src={asset_faqTrie1} alt="Model" />
             </div>
 
-            <div className="px-4">
+            <div className="mb-4 px-4">
               <img src={asset_faqTrie2} alt="Model" />
             </div>
 

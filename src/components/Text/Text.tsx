@@ -6,6 +6,7 @@ interface Props {
   weight?: string
   type?: string
   size?: string
+  lgSize?: string
   leading?: string
   as?: string
 }
@@ -15,6 +16,7 @@ const Text: React.FC<Props> = ({
   color = 'black',
   weight,
   size = 'md',
+  lgSize = '',
   leading,
   type = 'body',
   as = 'span'
@@ -26,6 +28,7 @@ const Text: React.FC<Props> = ({
         'font-body': type === 'body',
         'font-heading uppercase': type === 'heading',
         [`text-${size}`]: size,
+        [`lg:text-${size}`]: lgSize,
         [`text-${color}`]: color,
         [`font-${weight}`]: weight,
         [`leading-${leading}`]: leading

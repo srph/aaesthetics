@@ -130,14 +130,18 @@ const ServicesPage = () => (
 
     <Jumbotron title="Our Services" body="Wide range of cosmetic enchaments to bring out the new you" />
 
+    <div className="mb-24" />
+
     <Section>
       {services.map((service, i) => {
+        const isImageOnLeftSide = i % 2 === 0
+
         return (
           <>
             <Container size="lg" key={i}>
               <div
                 className={cx('relative flex bg-gold-500 mb-16', {
-                  'flex-row-reverse': i % 2 === 0
+                  'flex-row-reverse': isImageOnLeftSide
                 })}>
                 <div className="w-2/3 flex-shrink-0 px-12 py-16">
                   <Text as="h4" size="2xl" color="gold-800" type="heading" weight="extrabold">
@@ -153,13 +157,13 @@ const ServicesPage = () => (
 
                 <div
                   className={cx('absolute flex top-8 h-60 w-80', {
-                    '-right-8': i % 2 !== 0,
-                    '-left-8': i % 2 === 0
+                    '-right-8': !isImageOnLeftSide,
+                    '-left-8': isImageOnLeftSide
                   })}>
                   <img
                     src={service.thumbnail}
                     className={cx('block object-fill  w-full', {
-                      'self-end': i % 2 !== 0
+                      'self-end': !isImageOnLeftSide
                     })}
                   />
                 </div>

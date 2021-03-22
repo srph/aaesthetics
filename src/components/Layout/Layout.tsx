@@ -92,10 +92,13 @@ const Layout = ({ children }) => {
             </div>
           </div>
 
-          <div className="flex justify-between py-4 border-t border-grey-500">
-            <Text size="xs" color="grey-300" weight="medium">
-              &copy; Aesthetics. All rights reserved.
-            </Text>
+          <div className="flex flex-col lg:flex-row items-center justify-between py-4 border-t border-grey-500">
+            <div className="mb-2 lg:mb-0">
+              <Text size="xs" color="grey-300" weight="medium">
+                &copy; Aesthetics. All rights reserved.
+              </Text>
+            </div>
+
 
             <div className="flex">
               <a href="#" className="px-2">

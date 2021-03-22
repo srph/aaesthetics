@@ -40,23 +40,23 @@ const AboutPage = () => (
         <SectionHeading title="Meet the doctor" body="Dr. Claudine Roura" bodyWeight="bold" />
       </Container>
 
-      <div className="mb-8" />
+      <div className="mb-24 lg:mb-8" />
 
       <Container size="lg">
-        <div className="relative flex flex-row-reverse bg-gold-500">
-          <div className="w-2/3 shrink-none px-12 py-16">
+        <div className="relative flex flex-col lg: flex-row bg-gold-500">
+          <div className="relative -mt-16 lg:-mt-0 lg:absolute flex px-4 lg:px-0 lg:top-8 lg:-left-8 lg:mb-0">
+            <img src={asset_aboutDrRoura} alt="Photo of Dr. Roura" />
+          </div>
+
+          <div className="self-end lg:w-2/3 px-8 py-8 lg:px-12 lg:py-16">
             <Text as="p" size="2xl" weight="medium" color="white" leading="normal">
               {roura.description}
             </Text>
           </div>
-
-          <div className="absolute flex top-8 -left-8">
-            <img src={asset_aboutDrRoura} alt="Photo of Dr. Roura" />
-          </div>
         </div>
       </Container>
 
-      <div className="mb-24" />
+      <div className="mb-8 lg:mb-24" />
 
       <Container size="md">
         {roura.body.map((p, i) => (
@@ -65,36 +65,36 @@ const AboutPage = () => (
               {p}
             </Text>
 
-            {i !== roura.body.length - 1 && <div className="mb-8" />}
+            {i !== roura.body.length - 1 && <div className="mb-6 lg:mb-8" />}
           </React.Fragment>
         ))}
       </Container>
-
-      <div className="mb-24" />
     </Section>
 
     <Section>
       <Container size="lg">
-        <SectionHeading title="Certifications" />
+        <div className="mb-36">
+          <SectionHeading title="Certifications" />
+        </div>
 
-        <div className="mb-16" />
-
-        <div className="py-16 px-32 bg-gold-500 text-center">
-          <div className="relative -top-24 flex justify-center -mx-4 -mt-8">
-            <div className="px-4 pb-4">
+        <div className="relative flex-col py-1 lg:px-32 bg-gold-500">
+          <div className="relative px-4 lg:px-0 -mt-24 lg:-mt-24 flex flex-col lg:flex-row justify-center">
+            <div className="lg:px-4 mb-4">
               <img src={asset_aboutCertificate1} alt="Certificate 1" className="border border-gold-500" />
             </div>
 
-            <div className="px-4 pb-4">
+            <div className="lg:px-4">
               <img src={asset_aboutCertificate2} alt="Certificate 1" className="border border-gold-500" />
             </div>
           </div>
 
-          <div className="mb-4" />
-
-          <Text color="white" size="2xl" as="p">
-            Having Mastered the art of Body Sculpting, Dr. Roura now focuses on the art of Face Contouring with the use of Autologous fat grafting and the ITR2 Injectable Tissue Replacement and Rejuvenation, trained under Dr. Steven Cohen in Bangkok July 2019.
-          </Text>
+          <div className="p-4 lg:p-8 lg:text-center">
+            <Text color="white" size="2xl" as="p">
+              Having Mastered the art of Body Sculpting, Dr. Roura now focuses on the art of Face Contouring with the
+              use of Autologous fat grafting and the ITR2 Injectable Tissue Replacement and Rejuvenation, trained under
+              Dr. Steven Cohen in Bangkok July 2019.
+            </Text>
+          </div>
         </div>
       </Container>
     </Section>
@@ -111,11 +111,11 @@ const AboutPage = () => (
         <div className="relative">
           {affiliations.map((affilation, i) => (
             <div
-              className={cx('flex items-center p-8 border-l border-r border-t border-gold-500', {
+              className={cx('flex lg:items-center flex-col lg:flex-row p-4 lg:p-8 border-l border-r border-t border-gold-500', {
                 'border-b': i === affiliations.length - 1
               })}
               key={i}>
-              <div className="flex-shrink-0 flex items-center justify-center mr-4 h-8 w-8 bg-gold-500 rounded-full">
+              <div className="flex-shrink-0 flex mb-4 lg:mb-0 items-center justify-center mr-4 h-8 w-8 bg-gold-500 rounded-full">
                 <Text color="white" type="heading" weight="bold">
                   {i + 1}
                 </Text>
@@ -139,11 +139,11 @@ const AboutPage = () => (
         <div className="relative">
           {affiliations.map((affilation, i) => (
             <div
-              className={cx('flex items-center p-8 border-l border-r border-t border-gold-500', {
+              className={cx('flex lg:items-center flex-col lg:flex-row p-4 lg:p-8 border-l border-r border-t border-gold-500', {
                 'border-b': i === affiliations.length - 1
               })}
               key={i}>
-              <div className="flex-shrink-0 flex items-center justify-center mr-4 h-8 w-8 bg-gold-500 rounded-full">
+              <div className="flex-shrink-0 flex mb-4 lg:mb-0 items-center justify-center mr-4 h-8 w-8 bg-gold-500 rounded-full">
                 <Text color="white" type="heading" weight="bold">
                   {i + 1}
                 </Text>

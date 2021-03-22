@@ -58,13 +58,13 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ label, children }) => {
         })}
         onClick={handleClick}
       >
-        <div className="flex items-center justify-center mr-4 h-8 w-8 font-heading font-bold text-white bg-gold-500 rounded-full">
+        <div className="flex-shrink-0 flex items-center justify-center mr-4 h-8 w-8 font-heading font-bold text-white bg-gold-500 rounded-full">
           {index + 1}
         </div>
 
         <span className="font-heading font-bold uppercase">{label}</span>
 
-        <div className="ml-auto">
+        <div className="pl-4 ml-auto">
           {isActive ? <FaAngleUp /> : <FaAngleDown />}
         </div>
       </div>
@@ -75,7 +75,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ label, children }) => {
             "border-b": isLast,
           })}
         >
-          <div className="w-3/5">{children}</div>
+          <div className="lg:w-3/5">{children}</div>
         </div>
       )}
     </div>
