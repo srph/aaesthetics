@@ -80,18 +80,21 @@ const testimonials = [
   {
     name: 'John Doe',
     source: 'Instagram',
+    thumbnail: asset_modelA1Block,
     body:
       'Highly recommended! Very satisfied & very beautiful outcome. Dra. Claudine the best surgeon on the Philippines. I am not ashamed of wearing swimsuit now at age 54. Thank you Dra. Claudine & to her nurses who has been so caring, friendly & accommodating.'
   },
   {
     name: 'John Doe',
     source: 'Instagram',
+    thumbnail: asset_modelA1Block,
     body:
       'Highly recommended! Very satisfied & very beautiful outcome. Dra. Claudine the best surgeon on the Philippines. I am not ashamed of wearing swimsuit now at age 54. Thank you Dra. Claudine & to her nurses who has been so caring, friendly & accommodating.'
   },
   {
     name: 'John Doe',
     source: 'Instagram',
+    thumbnail: asset_modelA1Block,
     body:
       'Highly recommended! Very satisfied & very beautiful outcome. Dra. Claudine the best surgeon on the Philippines. I am not ashamed of wearing swimsuit now at age 54. Thank you Dra. Claudine & to her nurses who has been so caring, friendly & accommodating.'
   },
@@ -126,7 +129,11 @@ const Testimonials: React.FC = () => {
                 <div className="flex items-center px-8 max-w-screen-lg mx-auto">
                   <div className="flex-shrink-0 flex items-center px-16">
                     <div className="mr-4">
-                      <div className="w-16 h-16 bg-gold-800 rounded-full" />
+                      <img
+                        src={testimonial.thumbnail}
+                        alt={`${testimonial.thumbnail}'s Photo`}
+                        className="w-16 h-16 rounded-full"
+                      />
                     </div>
 
                     <div className="flex flex-col">
