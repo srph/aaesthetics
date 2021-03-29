@@ -1,4 +1,5 @@
 import React from 'react'
+import cx from 'classnames'
 
 interface Props {
   type?: 'button' | 'submit'
@@ -10,7 +11,10 @@ const Button: React.FC<Props> = ({ children, type = 'submit', disabled = false, 
   const border = mode === 'light' ? 'black' : 'white'
 
   return (
-    <div className={`inline-block border-2 border-${border}`}>
+    <div
+      className={cx(`inline-block border-2 border-${border}`, {
+        'opacity-50': disabled
+      })}>
       <button
         type={type}
         disabled={disabled}
