@@ -2,7 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 
 interface Props {
-  size?: 'md' | 'lg'
+  size?: 'md' | 'lg' | 'fluid'
 }
 
 const Container: React.FC<Props> = React.forwardRef(
@@ -11,6 +11,7 @@ const Container: React.FC<Props> = React.forwardRef(
       <div
         ref={ref}
         className={cx('mx-auto px-4', {
+          'w-full': size === 'fluid',
           'max-w-screen-2xl': size === 'xl',
           'max-w-screen-lg': size === 'lg',
           'max-w-screen-md': size === 'md'

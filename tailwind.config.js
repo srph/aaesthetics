@@ -16,6 +16,11 @@ module.exports = {
         192: '48rem',
         '1/2': '50%',
         full: '100%'
+      },
+      zIndex: {
+        'nav-mobile': 1000,
+        'nav-overlay': 1010,
+        'nav-content': 1020
       }
     },
     colors: {
