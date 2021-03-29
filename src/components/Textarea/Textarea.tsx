@@ -5,6 +5,7 @@ type InputProps = React.HTMLAttributes<HTMLTextAreaElement>
 
 type OwnProps = {
   label: string
+  name?: string
 }
 
 type Props = InputProps & OwnProps

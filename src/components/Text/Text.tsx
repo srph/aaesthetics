@@ -28,7 +28,7 @@ const Text: React.FC<Props> = ({
         'font-body': type === 'body',
         'font-heading uppercase': type === 'heading',
         [`text-${size}`]: size,
-        [`lg:text-${size}`]: lgSize,
+        [`lg:text-${lgSize}`]: lgSize,
         [`text-${color}`]: color,
         [`font-${weight}`]: weight,
         [`leading-${leading}`]: leading

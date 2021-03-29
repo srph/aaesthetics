@@ -140,10 +140,35 @@ const ServicesPage = () => (
           <>
             <Container size="lg" key={i}>
               <div
-                className={cx('relative flex bg-gold-500 mb-16', {
-                  'flex-row-reverse': isImageOnLeftSide
-                })}>
-                <div className="w-2/3 flex-shrink-0 px-12 py-16">
+                className={cx(
+                  `
+                  relative p-4 bg-gold-500 mb-8
+                  lg:px-12 lg:py-16 lg:flex
+                `,
+                  {
+                    'lg:flex-row-reverse': isImageOnLeftSide
+                  }
+                )}>
+                <div
+                  className={cx(
+                    `
+                    relative -mt-32 flex mb-8
+                    lg:absolute lg:top-8 lg:px-0 lg:h-60 lg:mb-0 lg:w-80
+                    `,
+                    {
+                      'lg:-right-8': !isImageOnLeftSide,
+                      'lg:-left-8': isImageOnLeftSide
+                    }
+                  )}>
+                  <img
+                    src={service.thumbnail}
+                    className={cx('block object-fill  w-full', {
+                      'self-end': !isImageOnLeftSide
+                    })}
+                  />
+                </div>
+
+                <div className="lg:w-2/3 lg:flex-shrink-0">
                   <Text as="h4" size="2xl" color="gold-800" type="heading" weight="extrabold">
                     {service.name}
                   </Text>
@@ -153,19 +178,6 @@ const ServicesPage = () => (
                   <Text as="p" size="2xl" weight="medium" color="white" leading="normal">
                     {service.description}
                   </Text>
-                </div>
-
-                <div
-                  className={cx('absolute flex top-8 h-60 w-80', {
-                    '-right-8': !isImageOnLeftSide,
-                    '-left-8': isImageOnLeftSide
-                  })}>
-                  <img
-                    src={service.thumbnail}
-                    className={cx('block object-fill  w-full', {
-                      'self-end': !isImageOnLeftSide
-                    })}
-                  />
                 </div>
               </div>
             </Container>
@@ -178,13 +190,13 @@ const ServicesPage = () => (
                       {text}
                     </Text>
 
-                    {j !== service.body.length - 1 && <div className="mb-8" />}
+                    {j !== service.body.length - 1 && <div className="mb-6" />}
                   </React.Fragment>
                 ))}
               </Container>
             )}
 
-            <div className="mb-24" />
+            <div className="mb-64 lg:mb-64" />
           </>
         )
       })}
