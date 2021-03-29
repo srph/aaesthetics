@@ -26,8 +26,6 @@ export { theme } from '../../tailwind.config'
 const ContactForm = () => {
   const [state, handleSubmit] = useForm('xyylgvwa')
 
-  console.log('STATE', state, handleSubmit)
-
   if (state.succeeded) {
     return (
       <div className="w-full p-8">
