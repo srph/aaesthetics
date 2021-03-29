@@ -101,6 +101,7 @@ const testimonials = [
   {
     name: 'John Doe',
     source: 'Instagram',
+    thumbnail: asset_modelA1Block,
     body:
       'Highly recommended! Very satisfied & very beautiful outcome. Dra. Claudine the best surgeon on the Philippines. I am not ashamed of wearing swimsuit now at age 54. Thank you Dra. Claudine & to her nurses who has been so caring, friendly & accommodating.'
   }
@@ -113,10 +114,10 @@ const Testimonials: React.FC = () => {
   return (
     <Section>
       <Container>
-        <div className="relative bg-gold-500 pt-16 pb-36">
-          <SectionHeading title="Testimonials" body="What our clients say?" bodyColor="white" />
+        <div className="relative bg-gold-500 pt-16 pb-20 lg:pb-36">
+          <SectionHeading title="Testimonials" body="What do our clients say?" bodyColor="white" />
 
-          <div className="mb-20" />
+          <div className="mb-12 lg:mb-20" />
 
           <Slick
             ref={sliderRef}
@@ -126,9 +127,9 @@ const Testimonials: React.FC = () => {
             afterChange={(index: number) => setActive(index)}>
             {testimonials.map((testimonial, i) => (
               <div key={i}>
-                <div className="flex items-center px-8 max-w-screen-lg mx-auto">
-                  <div className="flex-shrink-0 flex items-center px-16">
-                    <div className="mr-4">
+                <div className="flex flex-col-reverse lg:flex-row lg:items-center px-8 max-w-screen-lg mx-auto">
+                  <div className="flex-shrink-0 flex items-center lg:px-16">
+                    <div className="flex-shrink-0 mr-4">
                       <img
                         src={testimonial.thumbnail}
                         alt={`${testimonial.thumbnail}'s Photo`}
@@ -146,7 +147,7 @@ const Testimonials: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="w-max-2/3">
+                  <div className="w-max-2/3 mb-8 lg:mb-0">
                     <Text as="p" color="white" size="2xl" leading="relaxed">
                       {testimonial.body}
                     </Text>
