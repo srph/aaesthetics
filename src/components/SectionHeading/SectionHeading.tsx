@@ -5,14 +5,15 @@ import { Text } from '../Text'
 interface Props {
   title: string
   body?: string
+  bodyColor?: string
   bodyWeight?: string
   mode?: 'light' | 'dark'
 }
 
-const SectionHeading: React.FC<Props> = ({ title, body, bodyWeight = 'medium', mode = 'light' }) => {
+const SectionHeading: React.FC<Props> = ({ title, body, bodyWeight = 'medium', bodyColor = '', mode = 'light' }) => {
   const titleColor = mode === 'light' ? 'gold-800' : 'gold-500'
 
-  const bodyColor = mode === 'light' ? 'gold-500' : 'white'
+  const usedBodyColor = bodyColor || (mode === 'light' ? 'gold-500' : 'white')
 
   return (
     <div className="mx-auto max-w-2xl text-center">
@@ -26,7 +27,7 @@ const SectionHeading: React.FC<Props> = ({ title, body, bodyWeight = 'medium', m
         <>
           <div className="mb-4" />
 
-          <Text size="4xl" weight={bodyWeight} color={bodyColor} leading="tight">
+          <Text size="4xl" weight={bodyWeight} color={usedBodyColor} leading="tight">
             {body}
           </Text>
         </>

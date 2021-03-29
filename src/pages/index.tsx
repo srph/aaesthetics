@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
+import React, { useRef, useState } from 'react'
+import Slick from 'react-slick'
 
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
@@ -75,6 +75,107 @@ const services = [
     icon: asset_servicesRhinoplasty
   }
 ]
+
+const testimonials = [
+  {
+    name: 'John Doe',
+    source: 'Instagram',
+    body:
+      'Highly recommended! Very satisfied & very beautiful outcome. Dra. Claudine the best surgeon on the Philippines. I am not ashamed of wearing swimsuit now at age 54. Thank you Dra. Claudine & to her nurses who has been so caring, friendly & accommodating.'
+  },
+  {
+    name: 'John Doe',
+    source: 'Instagram',
+    body:
+      'Highly recommended! Very satisfied & very beautiful outcome. Dra. Claudine the best surgeon on the Philippines. I am not ashamed of wearing swimsuit now at age 54. Thank you Dra. Claudine & to her nurses who has been so caring, friendly & accommodating.'
+  },
+  {
+    name: 'John Doe',
+    source: 'Instagram',
+    body:
+      'Highly recommended! Very satisfied & very beautiful outcome. Dra. Claudine the best surgeon on the Philippines. I am not ashamed of wearing swimsuit now at age 54. Thank you Dra. Claudine & to her nurses who has been so caring, friendly & accommodating.'
+  },
+  {
+    name: 'John Doe',
+    source: 'Instagram',
+    body:
+      'Highly recommended! Very satisfied & very beautiful outcome. Dra. Claudine the best surgeon on the Philippines. I am not ashamed of wearing swimsuit now at age 54. Thank you Dra. Claudine & to her nurses who has been so caring, friendly & accommodating.'
+  }
+]
+
+const Testimonials: React.FC = () => {
+  const sliderRef = useRef()
+  const [active, setActive] = useState(0)
+
+  return (
+    <Section>
+      <Container>
+        <div className="relative bg-gold-500 pt-16 pb-36">
+          <SectionHeading title="Testimonials" body="What our clients say?" bodyColor="white" />
+
+          <div className="mb-20" />
+
+          <Slick
+            ref={sliderRef}
+            slidesToShow={1}
+            slidesToScroll={1}
+            arrows={false}
+            afterChange={(index: number) => setActive(index)}>
+            {testimonials.map((testimonial, i) => (
+              <div key={i}>
+                <div className="flex items-center px-8 max-w-screen-lg mx-auto">
+                  <div className="flex-shrink-0 flex items-center px-16">
+                    <div className="mr-4">
+                      <div className="w-16 h-16 bg-gold-800 rounded-full" />
+                    </div>
+
+                    <div className="flex flex-col">
+                      <Text color="gold-800" size="xl" weight="bold">
+                        {testimonial.name}
+                      </Text>
+                      <Text color="white" size="sm" type="heading">
+                        {testimonial.source}
+                      </Text>
+                    </div>
+                  </div>
+
+                  <div className="w-max-2/3">
+                    <Text as="p" color="white" size="2xl" leading="relaxed">
+                      {testimonial.body}
+                    </Text>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slick>
+
+          <div className="absolute left-4 bottom-4">
+            <Text type="heading" color="white" size="xl" weight="bold">
+              {active + 1}{' '}
+            </Text>
+            <Text type="heading" color="gold-800" size="xl" weight="bold">
+              / {testimonials.length}
+            </Text>
+          </div>
+
+          <div className="absolute right-0 -bottom-6">
+            <button className="flex items-center p-4 bg-grey-800" onClick={() => sliderRef.current.slickNext()}>
+              <div className="mr-4">
+                <Text type="heading" color="gold-500" weight="bold">
+                  Next
+                </Text>
+              </div>
+
+              <div className="text-white">
+                <FaArrowRight />
+              </div>
+            </button>
+          </div>
+        </div>
+      </Container>
+    </Section>
+  )
+}
 
 const IndexPage = () => (
   <Layout>
@@ -297,6 +398,8 @@ const IndexPage = () => (
         </div>
       </Container>
     </Section>
+
+    <Testimonials />
   </Layout>
 )
 
