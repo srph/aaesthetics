@@ -200,6 +200,42 @@ const AboutPage = () => (
 
     <Section>
       <Container>
+        <SectionHeading title="Meet the owner" body="Mrs. Fernandez" bodyWeight="bold" />
+      </Container>
+
+      <div className="mb-24 lg:mb-8" />
+
+      <Container size="lg">
+        <div className="relative flex flex-col lg: flex-row bg-gold-500">
+          <div className="relative -mt-16 lg:-mt-0 lg:absolute flex px-4 lg:px-0 lg:top-8 lg:-left-8 lg:mb-0">
+            <img src={asset_aboutDrRoura} alt="Photo of Dr. Roura" />
+          </div>
+
+          <div className="self-end lg:w-2/3 px-8 py-8 lg:px-12 lg:py-16">
+            <Text as="p" size="2xl" weight="medium" color="white" leading="normal">
+              {roura.description}
+            </Text>
+          </div>
+        </div>
+      </Container>
+
+      <div className="mb-8 lg:mb-24" />
+
+      <Container size="md">
+        {roura.body.map((p, i) => (
+          <React.Fragment key={i}>
+            <Text as="p" size="xl" color="gold.800" leading="loose">
+              {p}
+            </Text>
+
+            {i !== roura.body.length - 1 && <div className="mb-6 lg:mb-8" />}
+          </React.Fragment>
+        ))}
+      </Container>
+    </Section>
+
+    <Section>
+      <Container>
         <SectionHeading title="Meet the doctor" body="Dr. Claudine Roura" bodyWeight="bold" />
       </Container>
 
