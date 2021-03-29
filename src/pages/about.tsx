@@ -1,5 +1,7 @@
-import * as React from 'react'
+import React, { useState, useRef } from 'react'
 import cx from 'classnames'
+import Slick from 'react-slick'
+
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 import { Container } from '../components/Container'
@@ -7,10 +9,21 @@ import { Section } from '../components/Section'
 import { Text } from '../components/Text'
 import { Jumbotron } from '../components/Jumbotron'
 import { SectionHeading } from '../components/SectionHeading'
+import { FaArrowRight } from '../components/Icon'
 
 import asset_aboutCertificate1 from '../assets/about-certificate-1.png'
 import asset_aboutCertificate2 from '../assets/about-certificate-2.png'
 import asset_aboutDrRoura from '../assets/about-dr-roura.jpg'
+
+import asset_mentorDrAlfredoHoyos from '../assets/mentor-dr-alfredo-hoyos.jpg'
+import asset_mentorDrHoyosMillard from '../assets/mentor-hoyos-millard.jpg'
+import asset_mentorDrWilbertoCortes from '../assets/mentor-dr-wilberto-cortes.jpg'
+import asset_mentorDrSteveCohen from '../assets/mentor-dr-steve-cohen.jpg'
+import asset_mentorDrBenTalei from '../assets/mentor-dr-ben-talei.jpg'
+import asset_mentorDrRaulGuanzn from '../assets/mentor-dr-raul-guanzn.jpg'
+import asset_mentorDrPierreFournier from '../assets/mentor-dr-pierre-fournier.jpg'
+import asset_mentorDrsRobertMargetWeiss from '../assets/mentor-drs-robert-margaret-weiss.jpg'
+import asset_mentorDrSorinEremia from '../assets/mentor-dr-sorin-eremia.jpg'
 
 const roura = {
   description:
@@ -28,6 +41,156 @@ const affiliations = [
   'Associate fellow of the philippine academy of aesthetic surgery',
   'Member of the philippines society for liposuction surgery'
 ]
+
+const testimonials = [
+  {
+    name: 'DR. Alfredo Hoyos',
+    title: 'Inventor High Definition Technique',
+    thumbnail: asset_mentorDrAlfredoHoyos,
+    body:
+      'Colombia, 2008 - First training in the High Definition Technique, we were the second batch of trainees worldwide.'
+  },
+  {
+    name: 'Dr. Alfredo Hoyos & Dr. John Millard',
+    title: 'First Training in Inventor High Definition Technique',
+    thumbnail: asset_mentorDrHoyosMillard,
+    body:
+      'Colombia, 2008 - First training in the High Definition Technique, we were the second batch of trainees worldwide.'
+  },
+  {
+    name: 'DR. Wilberto Cortes',
+    title: 'Inventor High Definition Technique',
+    thumbnail: asset_mentorDrWilbertoCortes,
+    body:
+      'Houston, Texas, 2018 - Polishing up on Tummy tuck training with the Hourglass technique with Dr. Hourglass himself.'
+  },
+  {
+    name: 'DR. Steve Cohen',
+    title: 'Injectable Tissue Replacement and Rejuvenation ITR2',
+    thumbnail: asset_mentorDrSteveCohen,
+    body:
+      'Bangkok, 2019 - Precision Fat grafting for the face using ITR2 technique with the well renowned Dr. Steve Cohe'
+  },
+  {
+    name: 'DR. Ben Talei',
+    title: 'Beverly Hills Center',
+    thumbnail: asset_mentorDrBenTalei,
+    body:
+      'Beverly HIlls, CA, 2020 - Auralyft Training - Modified Deep Plane Facelift and Liplift, sharing his personal technique for the improved version of the classical facelift.'
+  },
+  {
+    name: 'DR. Raul Guanzn',
+    title: 'Beverly Hills Center',
+    thumbnail: asset_mentorDrRaulGuanzn,
+    body:
+      'Manila, 2003 to 2005 - Here is where my love for cosmetic surgery started when I underwent a 2 year cosmetic surgery preceptorship training with Dr. Raul Guanzon.'
+  },
+  {
+    name: 'DR. Pierre Fournier',
+    title: 'Father of Liposuction Surgery',
+    thumbnail: asset_mentorDrPierreFournier,
+    body: 'Manila, 2007 - Basic liposuction and fat grafting workshop with the Father of Liposuction Surgery.'
+  },
+  {
+    name: 'DRS. Robert and Margaret Weiss',
+    title: 'Father of Liposuction Surgery',
+    thumbnail: asset_mentorDrsRobertMargetWeiss,
+    body: 'Maryland, USA, 2005 - Walter de Groot Phlebology Fellowship.'
+  },
+  {
+    name: 'DR. Sorin Eremia',
+    title: 'Father of Liposuction Surgery',
+    thumbnail: asset_mentorDrSorinEremia,
+    body:
+      'Riverside, CA, USA 2003 - This is where it all started being granted the American Society of Dermatologic Surgery Preceptorship program with Dr. Sorin Eremia in Brockton Cosmetic Surgery.'
+  }
+]
+
+const Testimonials: React.FC = () => {
+  const sliderRef = useRef()
+  const [active, setActive] = useState(0)
+  const testimonial = testimonials[active]
+
+  return (
+    <Section space="narrow">
+      <Container>
+        <SectionHeading title="Meet the Mentors" body="The people who shaped Dr. Roura’s skills and knowledge" />
+
+        <div className="mb-12 lg:mb-20" />
+
+        <div className="relative bg-gold-500 pt-4 pb-12 lg:pt-12 lg:pb-24">
+          <Slick
+            ref={sliderRef}
+            fade
+            slidesToShow={1}
+            slidesToScroll={1}
+            arrows={false}
+            beforeChange={(index: number) => setActive(index)}>
+            {testimonials.map((testimonial, i) => (
+              <div key={i}>
+                <div className="flex flex-col lg:flex-row lg:px-8">
+                  <div className="lg:w-1/3 lg:h-full mb-8 lg:mb-0">
+                    <div className="lg:hidden px-4">
+                      <img
+                        src={testimonial.thumbnail}
+                        alt={`${testimonial.name}'s Thumbnail`}
+                        className="relative -mt-4 w-full"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col mb-8 lg:mb-0 px-4 lg:px-0 lg:w-2/3">
+                    <Text color="gold-800" size="sm" weight="black" type="heading">
+                      {testimonial.title}
+                    </Text>
+
+                    <div className="mb-4" />
+
+                    <Text color="white" size="4xl">
+                      {testimonial.name}
+                    </Text>
+
+                    <div className="mb-8" />
+
+                    <div className="max-w-screen-sm">
+                      <Text as="p" color="white" size="2xl" leading="relaxed">
+                        {testimonial.body}
+                      </Text>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slick>
+
+          <div className="hidden lg:block absolute inset-0 pointer-events-none">
+            <div className="relative w-1/3">
+              <div className="absolute top-8 right-8 p-4">
+                <img src={testimonial.thumbnail} alt={`${testimonial.name}'s Thumbnail`} className="w-full" />
+              </div>
+            </div>
+          </div>
+
+          <div className="absolute right-0 -bottom-6">
+            <button className="flex items-center p-4 bg-grey-800" onClick={() => sliderRef.current.slickNext()}>
+              <div className="mr-4">
+                <Text type="heading" color="gold-500" weight="bold">
+                  Next
+                </Text>
+              </div>
+
+              <div className="text-white">
+                <FaArrowRight />
+              </div>
+            </button>
+          </div>
+        </div>
+      </Container>
+
+      <div className="mb-24" />
+    </Section>
+  )
+}
 
 const AboutPage = () => (
   <Layout>
@@ -71,7 +234,7 @@ const AboutPage = () => (
       </Container>
     </Section>
 
-    <Section>
+    <Section space="narrow">
       <Container size="lg">
         <div className="mb-36">
           <SectionHeading title="Certifications" />
@@ -99,7 +262,7 @@ const AboutPage = () => (
       </Container>
     </Section>
 
-    <Section>
+    <Section space="narrow">
       <Container size="md">
         <SectionHeading
           title="Affiliations"
@@ -111,9 +274,12 @@ const AboutPage = () => (
         <div className="relative">
           {affiliations.map((affilation, i) => (
             <div
-              className={cx('flex lg:items-center flex-col lg:flex-row p-4 lg:p-8 border-l border-r border-t border-gold-500', {
-                'border-b': i === affiliations.length - 1
-              })}
+              className={cx(
+                'flex lg:items-center flex-col lg:flex-row p-4 lg:p-8 border-l border-r border-t border-gold-500',
+                {
+                  'border-b': i === affiliations.length - 1
+                }
+              )}
               key={i}>
               <div className="flex-shrink-0 flex mb-4 lg:mb-0 items-center justify-center mr-4 h-8 w-8 bg-gold-500 rounded-full">
                 <Text color="white" type="heading" weight="bold">
@@ -130,33 +296,7 @@ const AboutPage = () => (
       </Container>
     </Section>
 
-    <Section>
-      <Container size="md">
-        <SectionHeading title="Meet the Mentors" body="The people who shaped Dr. Roura’s skills and knowledge" />
-
-        <div className="mb-8" />
-
-        <div className="relative">
-          {affiliations.map((affilation, i) => (
-            <div
-              className={cx('flex lg:items-center flex-col lg:flex-row p-4 lg:p-8 border-l border-r border-t border-gold-500', {
-                'border-b': i === affiliations.length - 1
-              })}
-              key={i}>
-              <div className="flex-shrink-0 flex mb-4 lg:mb-0 items-center justify-center mr-4 h-8 w-8 bg-gold-500 rounded-full">
-                <Text color="white" type="heading" weight="bold">
-                  {i + 1}
-                </Text>
-              </div>
-
-              <Text type="heading" weight="bold">
-                {affilation}
-              </Text>
-            </div>
-          ))}
-        </div>
-      </Container>
-    </Section>
+    <Testimonials />
   </Layout>
 )
 

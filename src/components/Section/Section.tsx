@@ -1,7 +1,20 @@
-import React from "react"
+import React from 'react'
+import cx from 'classnames'
 
-const Section: React.FC = ({ children }) => {
-  return <div className="py-16 lg:py-36">{children}</div>
+interface Props {
+  space?: 'narrow' | 'normal'
+}
+
+const Section: React.FC<Props> = ({ children, space = 'normal' }) => {
+  return (
+    <div
+      className={cx({
+        'py-16': space === 'narrow',
+        'py-16 lg:py-36': space === 'normal'
+      })}>
+      {children}
+    </div>
+  )
 }
 
 export { Section }
