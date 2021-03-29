@@ -189,7 +189,9 @@ const IndexPage = () => {
   const serviceRef = useRef<HTMLDivElement>()
 
   const handleScrollToServices = () => {
-    serviceRef.current.scrollIntoView()
+    serviceRef.current.scrollIntoView({
+      behavior: 'smooth'
+    })
   }
 
   return (
