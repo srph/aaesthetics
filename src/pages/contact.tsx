@@ -30,7 +30,7 @@ const ContactForm = () => {
     return (
       <div className="w-full p-8">
         <div className="flex p-4 bg-gold-500">
-          <div className="flex-shrink-0 bg-gold-800 text-xs text-white w-d h-6 flex items-center justify-center mr-4 rounded-full">
+          <div className="flex-shrink-0 bg-gold-800 text-xs text-white w-6 h-6 flex items-center justify-center mr-4 rounded-full">
             <FaCheck />
           </div>
 
